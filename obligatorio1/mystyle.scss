@@ -1,0 +1,83 @@
+$primary-color: rgb(0, 128, 122);
+$secondary-color: rgb(197, 131, 9);
+$three-color: purple;
+$text-color: white;
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.container-1 {
+  display: flex;
+  margin: 30px;
+  justify-content: center;
+  gap: 10px;
+  .box.base-color {
+    background-color: $primary-color;
+  }
+
+  @for $i from 1 through 4 {
+    .box.lighten-#{$i} {
+      background-color: lighten($primary-color, $i * 5%);
+    }
+
+    .box.darken-#{$i} {
+      background-color: darken($primary-color, $i * 5%);
+      color: $text-color;
+    }
+  }
+}
+
+.container-2 {
+  display: flex;
+  margin: 30px;
+  justify-content: center;
+  gap: 10px;
+  .box.base-color {
+    background-color: $secondary-color;
+  }
+  @for $i from 1 through 4 {
+    .box.lighten-#{$i} {
+      background-color: lighten($secondary-color, $i * 5%);
+    }
+    .box.darken-#{$i} {
+      background-color: darken($secondary-color, $i * 5%);
+      color: $text-color;
+    }
+  }
+}
+
+.container-3 {
+  display: flex;
+
+  justify-content: center;
+  gap: 10px;
+  .box.base-color {
+    background-color: $three-color;
+  }
+  @for $i from 1 through 4 {
+    .box.lighten-#{$i} {
+      background-color: lighten($three-color, $i * 5%);
+    }
+    .box.darken-#{$i} {
+      background-color: darken($three-color, $i * 5%);
+      color: $text-color;
+    }
+  }
+}
+
+.box.base-color-2 {
+  background-color: $secondary-color;
+}
+
+.box.base-color-3 {
+  background-color: $three-color;
+  color: $text-color;
+}
+.box {
+  display: flex;
+  padding: 15px;
+  border: 1px;
+  margin-bottom: 15px;
+}
