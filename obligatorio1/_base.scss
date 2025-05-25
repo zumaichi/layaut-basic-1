@@ -1,0 +1,21 @@
+$primary-color: rgb(0, 128, 122);
+$secondary-color: rgb(197, 131, 9);
+$three-color: purple;
+$text-color: white;
+
+@mixin color($color) {
+  .base-color {
+    background-color: $color;
+  }
+
+  @for $i from 1 through 4 {
+    .lighten-#{$i} {
+      background-color: lighten($color, $i * 5%);
+    }
+
+    .darken-#{$i} {
+      background-color: darken($color, $i * 5%);
+      color: $text-color;
+    }
+  }
+}

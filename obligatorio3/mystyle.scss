@@ -3,22 +3,29 @@ body {
   padding: 0;
 }
 
-#barra {
+.barra {
   display: flex;
   justify-content: space-between;
   background-color: #c9f381;
+}
+ul {
+  display: flex;
+  margin: 30px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  width: 100%;
   :hover {
     background-color: #65d1b5;
   }
 }
-p {
-  margin: 0;
-  padding: 12px 16px;
+li {
+  flex: 1;
+  text-align: center;
   color: #9b3b6e;
-  text-decoration: none;
 }
 @media (max-width: 600px) {
-  #barra {
+  .barra ul {
     flex-direction: column;
   }
 }
